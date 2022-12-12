@@ -8,10 +8,10 @@ const SlideSchema = new Schema(
       type: String,
     },
     video: {
-      type: str,
+      type: String,
     },
     image: {
-      type: strict,
+      type: String,
     },
   },
   { collection: "slides" }

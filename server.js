@@ -24,7 +24,9 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-routes(app); // attach routes to server
+lessonRoutes(app); // attach routes to server
+slideRoutes(app);
+quizRoutes(app);
 app.listen(port);
 
 // a 404 page not found
