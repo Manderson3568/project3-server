@@ -12,7 +12,7 @@ const slideRoutes = require("./api/routes/slideRoutes");
 global.Quiz = require("./api/models/quizModel");
 const quizRoutes = require("./api/routes/quizRoutes");
 
-global.User = require("./api/models/quizModel");
+global.User = require("./api/models/userModel");
 const userRoutes = require("./api/routes/userRoutes");
 
 mongoose.Promise = global.Promise;
