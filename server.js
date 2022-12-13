@@ -12,6 +12,9 @@ const slideRoutes = require("./api/routes/slideRoutes");
 global.Quiz = require("./api/models/quizModel");
 const quizRoutes = require("./api/routes/quizRoutes");
 
+global.User = require("./api/models/userModel");
+const userRoutes = require("./api/routes/userRoutes");
+
 global.StudentLesson = require("./api/models/studentLessonModel");
 const studentLessonRoutes = require("./api/routes/studentLessonRoutes");
 
@@ -24,13 +27,13 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(cors());
+app.options("*", cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 lessonRoutes(app); // attach routes to server
 slideRoutes(app);
 quizRoutes(app);
-studentLessonRoutes(app);
 app.listen(port);
 
 // a 404 page not found
