@@ -1,7 +1,7 @@
 const userBuilder = require("../controllers/userController");
 
 module.exports = (app) => {
-  app.router("/users").post(userBuilder.createUser);
+  app.route("/users").post(userBuilder.createUser).get(userBuilder.getUser);
 
-  app.router("/login").post(userBuilder.loginUser);
+  app.route("/login").post(userBuilder.loginUser);
 };

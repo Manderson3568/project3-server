@@ -22,7 +22,7 @@ const UserSchema = new Schema(
       default: false,
     },
   },
-  { collection: "user" }
+  { collection: "users" }
 );
 
 module.exports = mongoose.model("User", UserSchema);
