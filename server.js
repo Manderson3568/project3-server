@@ -12,6 +12,9 @@ const slideRoutes = require("./api/routes/slideRoutes");
 global.Quiz = require("./api/models/quizModel");
 const quizRoutes = require("./api/routes/quizRoutes");
 
+global.StudentLesson = require("./api/models/studentLessonModel");
+const studentLessonRoutes = require("./api/routes/studentLessonRoutes");
+
 mongoose.Promise = global.Promise;
 mongoose.connect(
   `mongodb+srv://user:${process.env.MONGOPW}@cluster0.ygqcbht.mongodb.net/?retryWrites=true&w=majority`
@@ -27,6 +30,7 @@ app.use(bodyParser.json());
 lessonRoutes(app); // attach routes to server
 slideRoutes(app);
 quizRoutes(app);
+studentLessonRoutes(app);
 app.listen(port);
 
 // a 404 page not found

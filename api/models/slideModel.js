@@ -13,6 +13,9 @@ const SlideSchema = new Schema(
     image: {
       type: String,
     },
+    title: {
+      type: String,
+    },
   },
   { collection: "slides" }
 );
