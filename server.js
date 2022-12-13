@@ -34,6 +34,8 @@ app.use(bodyParser.json());
 lessonRoutes(app); // attach routes to server
 slideRoutes(app);
 quizRoutes(app);
+studentLessonRoutes(app);
+userRoutes(app);
 app.listen(port);
 
 // a 404 page not found
