@@ -36,6 +36,7 @@ slideRoutes(app);
 quizRoutes(app);
 studentLessonRoutes(app);
 userRoutes(app);
+
 app.listen(port);
 
 // a 404 page not found
