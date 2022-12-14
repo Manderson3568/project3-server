@@ -12,7 +12,7 @@ const slideRoutes = require("./api/routes/slideRoutes");
 global.Quiz = require("./api/models/quizModel");
 const quizRoutes = require("./api/routes/quizRoutes");
 
-global.User = require("./api/models/userModel");
+global.User = require("./api/models/UserModel");
 const userRoutes = require("./api/routes/userRoutes");
 
 global.StudentLesson = require("./api/models/studentLessonModel");
