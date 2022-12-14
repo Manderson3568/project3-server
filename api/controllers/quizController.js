@@ -12,6 +12,7 @@ exports.readQuizzes = (req, res) => {
 exports.readQuiz = (req, res) => {
   Quiz.findById(req.params.quizId, (err, quiz) => {
     if (err) res.send(err);
+    console.log(quiz);
     res.json(quiz);
   });
 };
