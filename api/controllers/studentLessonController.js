@@ -4,10 +4,15 @@ const StudentLesson = mongoose.model("StudentLesson");
 
 exports.readStudentLessons = (req, res) => {
   // console.log("back end");
-  StudentLesson.find({}, (err, studentlessons) => {
-    if (err) res.send(err);
-    res.json(studentlessons);
-  });
+  StudentLesson.find(
+    {
+      studentId: req.query.user,
+    },
+    (err, studentlessons) => {
+      if (err) res.send(err);
+      res.json(studentlessons);
+    }
+  );
 };
 
 exports.readStudentLesson = (req, res) => {
