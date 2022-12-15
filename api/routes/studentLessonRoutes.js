@@ -6,4 +6,7 @@ module.exports = (app) => {
     .get(studentLessonBuilder.readStudentLessons)
     .post(studentLessonBuilder.createStudentLesson);
   app.route("/studentlesson").get(studentLessonBuilder.readStudentLesson);
+  app
+    .route("/studentlesson/:studentLessonId")
+    .put(studentLessonBuilder.updateStudentLesson);
 };

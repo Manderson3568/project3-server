@@ -14,7 +14,7 @@ exports.readStudentLesson = (req, res) => {
   console.log(req.query);
   StudentLesson.find(
     {
-      studentId: req.query.student,
+      studentId: req.query.user,
       lessonId: req.query.lesson,
     },
     (err, studentlesson) => {
@@ -27,8 +27,8 @@ exports.readStudentLesson = (req, res) => {
 exports.createStudentLesson = (req, res) => {
   console.log(req.body);
   const newStudentLesson = new StudentLesson({
-    lessonID: req.body.lesson,
-    studentId: req.body.student,
+    lessonId: req.body.lesson,
+    studentId: req.body.user,
     position: 0,
   });
   console.log(newStudentLesson);
@@ -39,6 +39,18 @@ exports.createStudentLesson = (req, res) => {
         error: "email in use",
       });
     }
-    return studentLesson;
+    return res.json(studentLesson);
   });
+};
+
+exports.updateStudentLesson = (req, res) => {
+  StudentLesson.findOneAndUpdate(
+    { _id: req.params.studentLessonId },
+    req.body,
+    { new: true },
+    (err, studentLesson) => {
+      if (err) res.send(err);
+      res.json(studentLesson);
+    }
+  );
 };
